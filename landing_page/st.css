@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background: #0bb3e2; /* Lighter background for a cleaner look */
+}
+
+.header {
+    background: #333; /* Darker background for better contrast */
+    color: #fff;
+    padding: 10px 20px; /* Reduced padding for a more compact header */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.header.sticky {
+    background: #222; /* Slightly darker for sticky header */
+}s
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Added padding for nav items */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Slightly reduced gap between links */
+}
+
+.nav-links a {
+    color: #f2f2f2; /* Light color for better readability */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ff7e5f; /* Warm coral color for underline */
+    bottom: -4px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    background: url('hero-phone.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px; /* Added padding to ensure content doesn't touch edges */
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 0 20px; /* Added padding for better spacing */
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    padding: 12px 20px; /* Reduced horizontal padding */
+    background: #ff7e5f; /* Warm coral color for button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px; /* Reduced margin for closer alignment */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background: #ff5a5f; /* Slightly darker coral for hover effect */
+    transform: translateY(-3px);
+}
+
+.features, .specs, .reviews, .footer {
+    padding: 60px 20px; /* Reduced padding for a more compact layout */
+    text-align: center;
+    background: #fff;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.features.show, .specs.show, .reviews.show, .footer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.features h2, .specs h2, .reviews h2, .footer h2 {
+    margin-bottom: 30px; /* Reduced margin for a tighter look */
+    font-size: 2.5em;
+    position: relative;
+}
+
+.features h2::after, .specs h2::after, .reviews h2::after, .footer h2::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #ff7e5f; /* Warm coral color for underline */
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.feature-grid {
+    display: flex;
+    gap: 15px; /* Reduced gap for a more compact grid */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1;
+    max-width: 280px; /* Reduced max-width for a tighter grid */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.feature-item h3 {
+    margin: 10px 0; /* Reduced margin for tighter spacing */
+}
+
+.feature-item p {
+    padding: 0 15px 15px; /* Reduced padding for a more compact look */
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item:hover img {
+    transform: scale(1.05);
+}
+
+.specs table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+}
+
+.specs th, .specs td {
+    border: 1px solid #ddd;
+    padding: 10px; /* Reduced padding for a more compact table */
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.specs tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.specs tr:hover th, .specs tr:hover td {
+    background: #ff7e5f; /* Warm coral color for hover */
+    color: #fff;
+}
+
+.review-grid {
+    display: flex;
+    gap: 15px; /* Reduced gap for a more compact grid */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    flex: 1;
+    max-width: 280px; /* Reduced max-width for a tighter grid */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Reduced padding for a more compact look */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.review-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.review-item:hover img {
+    transform: scale(1.1);
+}
+
+.footer .social-icons {
+    margin-top: 15px; /* Reduced margin for closer alignment */
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #ff7e5f; /* Warm coral color for hover */
+    transform: scale(1.2);
+}
